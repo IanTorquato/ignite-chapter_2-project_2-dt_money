@@ -66,10 +66,23 @@ export const GlobalStyle = createGlobalStyle`
   
   .react-modal-content {
     background-color: var(--background);
-    border-radius: 0%.25rem;
+    border-radius: 0.25rem;
     max-width: 576px;
     padding: 3rem;
     position: relative;
     width: 100%;
+  }
+
+  .react-modal-close {
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
   }
 `

@@ -8,6 +8,11 @@ import { GlobalStyle } from './styles.global'
 
 Modal.setAppElement('#root')
 
+export type ModalProps = {
+  isOpen: boolean
+  onRequestClose: () => void
+}
+
 export function App() {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false)
 
