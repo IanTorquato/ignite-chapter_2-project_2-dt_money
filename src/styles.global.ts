@@ -51,4 +51,25 @@ export const GlobalStyle = createGlobalStyle`
     cursor: not-allowed;
     opacity: 0.6;
   }
+
+  .react-modal-overlay {
+    align-items: center;
+    background-color: #00000088;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+  
+  .react-modal-content {
+    background-color: var(--background);
+    border-radius: 0%.25rem;
+    max-width: 576px;
+    padding: 3rem;
+    position: relative;
+    width: 100%;
+  }
 `
