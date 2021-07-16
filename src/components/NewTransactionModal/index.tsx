@@ -16,10 +16,17 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: ModalProps) => {
   const [amount, setAmount] = useState(0)
   const [category, setCategory] = useState('')
 
-  function handleCreateNewTransaction(event: FormEvent) {
+  async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault()
 
-    createTransaction({ type, title, amount, category })
+    await createTransaction({ type, title, amount, category })
+
+    setType('deposit')
+    setTitle('')
+    setAmount(0)
+    setCategory('')    
+
+    onRequestClose()
   }
 
   return (

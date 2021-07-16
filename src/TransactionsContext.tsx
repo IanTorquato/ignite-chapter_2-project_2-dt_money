@@ -15,7 +15,7 @@ type TransactionInput = Omit<Transaction, 'id' | 'createdAt'>
 
 type TransactionsContextData = {
   transactions: Transaction[]
-  createTransaction: (transaction: TransactionInput) => void
+  createTransaction: (transaction: TransactionInput) => Promise<void>
 }
 
 export const TransactionsContext = createContext<TransactionsContextData>({} as TransactionsContextData)
@@ -27,8 +27,10 @@ export function TransactionsProvider({ children }: { children: ReactNode }) {
     api.get('/transactions').then(response => setTransactions(response.data.transactions))
   }, [])
 
-  async function createTransaction(transaction: TransactionInput) {
-    await api.post('/transactions', transaction)
+  async function createTransaction(transactionInput: TransactionInput) {
+    const response = await api.post('/transactions', { ...transactionInput, createdAt: new Date() })
+
+    setTransactions([...transactions, response.data.transaction])
   }
 
   return (
