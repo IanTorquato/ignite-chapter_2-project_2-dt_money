@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import Modal from 'react-modal'
+import { useState } from 'react'
 
 import { TransactionsProvider } from './hooks/useTransactions'
 import { Header } from './components/Header'

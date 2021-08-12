@@ -28,7 +28,9 @@ export function TransactionsProvider({ children }: { children: ReactNode }) {
   }, [])
 
   async function createTransaction(transactionInput: TransactionInput) {
-    const response = await api.post('/transactions', { ...transactionInput, createdAt: new Date() })
+    const response = await api.post('/transactions', {
+      ...transactionInput, createdAt: new Date()
+    })
 
     setTransactions([...transactions, response.data.transaction])
   }

@@ -79,7 +79,7 @@ export const GlobalStyle = createGlobalStyle`
     position: absolute;
     right: 1.5rem;
     top: 1.5rem;
-    transition: filter 0.2s;
+    transition: filter 0.1s;
 
     &:hover {
       filter: brightness(0.8);

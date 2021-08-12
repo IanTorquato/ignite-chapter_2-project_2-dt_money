@@ -6,7 +6,6 @@ export const Dashboard = () => {
   return (
     <Container>
       <Summary/>
-
       <TransactionTable />
     </Container>
   )
